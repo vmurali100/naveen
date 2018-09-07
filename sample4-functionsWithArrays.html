@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+</head>
+<body>
+    <select name="" onchange="showLatest()" id="mySelect">
+        <option value="push">Push</option>
+        <option value="pop">POP</option>
+        <option value="shift">Shift</option>
+        <option value="unshift">Unshift</option>
+        <option value="reverse">Reverse</option>
+
+    </select>
+    <script>
+    var friends=[
+    {
+        "fname": "Preston",
+        "lname": "Erica"
+    },
+    {
+        "fname": "Marcus",
+        "lname": "Efird"
+    },
+    {
+        "fname": "Jireh",
+        "lname": "Krout"
+    },
+    {
+        "fname": "Angelique",
+        "lname": "Gipple"
+    },
+    {
+        "fname": "April",
+        "lname": "Carson"
+    },
+    {
+        "fname": "Jireh",
+        "lname": "Reddin"
+    }]
+    var deleted;
+    function showLatest(){
+        console.log(friends)
+        
+    var selectedValue = document.getElementById("mySelect").value;
+    if(selectedValue=="pop"){
+        friends.pop()
+        console.log(friends)
+    }else if( selectedValue == "shift"){
+        deleted = friends.shift()
+        console.log(friends)
+    }else if (selectedValue == "unshift"){
+        friends.unshift(deleted)
+        console.log(friends)
+    }
+   
+
+    }
+    </script>
+</body>
+</html>
