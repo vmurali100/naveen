@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+
+    </div>
+    <div id="lname">
+
+    </div>
+    <script>
+        var friends = [
+    {
+        "fname": "Preston",
+        "lname": "Erica"
+    },
+    {
+        "fname": "Marcus",
+        "lname": "Efird"
+    },
+    {
+        "fname": "Jireh",
+        "lname": "Krout"
+    },
+    {
+        "fname": "Angelique",
+        "lname": "Gipple"
+    },
+    {
+        "fname": "April",
+        "lname": "Carson"
+    },
+    {
+        "fname": "Jireh",
+        "lname": "Reddin"
+    }]
+    var data= "";
+        // for (
+        //     i=0;
+        //     i<friends.length;
+        //     i++
+        // ){
+        //     console.log(friends[i].fname)
+        //     data=data+friends[i].fname+"<br>"
+        // }
+        for(
+            i=0;
+            i<friends.length;
+            i++
+        ){
+            console.log(friends[i].lname)
+            data=data+friends[i].lname+"<br>"
+
+        }
+
+        // document.getElementById("demo").innerHTML=data;
+        document.getElementById("lname").innerHTML=data;
+    </script>
+</body>
+</html>

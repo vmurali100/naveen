@@ -1,0 +1,22 @@
+1. Data Types
+2. Variables
+3. Objects
+    How to create a empty object.
+    How to create an Object with Values
+    how to add a property or Values to an Objects.
+    How to Delete a property or a key to an Objects.
+    How to use for in loop to loop through an Object.
+
+4.What is Arrays .
+    How to create an Array (empty Array and Array with Values)
+    Array Methods (length, push,pop,unshift,shift, splice,sort,reverse..)
+5. Functions 
+    What are the types of Functions.(Anonymous, Named functions , SIF...)
+6. Events 
+    Onclick and Onchange
+7. Conditions 
+    if 
+    else if 
+8. DOM
+    document.getElementById()
+    document.createElement()    

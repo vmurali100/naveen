@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Document</title>
+</head>
+<body>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname"><br>
+    <label for="lname">Last Name</label>
+
+    <input type="text" id="lname"><br>
+    <label for="tel">Tel</label>
+    <input type="text" id="tel"><br>
+    <label for="address">Address</label>
+    <input type="text" id="address"><br>
+    <label for="city">City</label>
+    <input type="text" id="city"><br>
+    <label for="state">State</label>
+    <input type="text" id="state"><br>
+    <label for="zip">Zip</label>
+    <input type="text" id="zip"><br>
+
+
+    <button onclick="getDetails()">Get</button>
+
+    <table border="1">
+        <tr >
+                <th>fname</th>
+                <th>lname</th>
+                <th>tel</th>
+                <th>address</th>
+                <th>city</th>
+                <th>state</th>
+                <th>zip</th>
+
+        </tr>
+            <tbody id="mytable1">
+                   
+            </tbody>
+        </table>
+
+
+    <script>
+        var persons=[];
+
+
+            var person={
+                fname:'',
+                lname:'',
+                tel:'',
+                address:'',
+                city:'',
+                state:'',
+                zip:''
+            }
+
+        function getDetails(){
+            person={
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                tel:document.getElementById("tel").value,
+                address:document.getElementById("address").value,
+                city:document.getElementById("city").value,
+                state:document.getElementById("state").value,
+                zip:document.getElementById("zip").value
+
+            }
+
+            console.log(person)
+            persons.push(person)//adding person object to the array
+            cleartable()
+            display()// invoking
+
+        }
+         function display(){
+             document.getElementById("mytable1").innerHTML='';
+             for(i=0;i<persons.length;i++){
+                  var newperson= persons[i];
+                  var mytr= document.createElement("tr");
+                  for(b in newperson){
+                      var tabletd= document.createElement("td");
+                      tabletd.innerHTML= newperson[b]
+                      mytr.appendChild(tabletd)
+                  }
+                  document.getElementById("mytable1").appendChild(mytr);
+
+             }
+         }
+         function cleartable(){
+            // document.getElementById("fname").value='',
+            // document.getElementById("lname").value='',
+            // document.getElementById("tel").value='',
+            // document.getElementById("address").value='',
+            // document.getElementById("city").value='',
+            // document.getElementById("state").value='',
+            // document.getElementById("zip").value=''
+            for(a in person){
+                document.getElementById(a).value="";
+            }
+         }
+
+
+    </script>
+</body>
+</html>

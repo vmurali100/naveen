@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="company-input" type="text">
+    <button id="company-btn" onclick="show()">click</button>
+
+    <div class="" id="details-prod"></div>
+    <script>
+
+        function show() {
+            // alert("hi");
+            var college = document.getElementById("company-input").value;
+            for (i = 0; i < companydetails.length; i++) {
+                if (college == companydetails[i].id || college == companydetails[i].first_name || college == companydetails[i].last_name || college == companydetails[i].email
+                    || college == companydetails[i].gender || college == companydetails[i].ip_address
+                ) {
+                    console.log(companydetails)
+                    document.getElementById("details-prod").innerHTML = "<br> id Number :" + companydetails[i].id +
+                        "<br> First NAME : " + companydetails[i].first_name +
+                        "<br> LAST NAME : "+companydetails[i].last_name+
+                        "<br> EMAIL : "+companydetails[i].email+
+                        "<br> GENDER : "+companydetails[i].gender+
+                        "<br> IP ADDRESS : "+companydetails[i].ip_address
+
+         }
+            }
+        }
+
+
+        var companydetails = [
+            { "id": 1, "first_name": "Mureil", "last_name": "Fockes", "email": "mfockes0@taobao.com", "gender": "Female", "ip_address": "13.16.130.162" },
+            { "id": 2, "first_name": "Bernarr", "last_name": "Bollen", "email": "bbollen1@shareasale.com", "gender": "Male", "ip_address": "166.188.159.189" },
+            { "id": 3, "first_name": "Rebbecca", "last_name": "Stedell", "email": "rstedell2@de.vu", "gender": "Female", "ip_address": "159.255.129.78" },
+            { "id": 4, "first_name": "Paxon", "last_name": "Pawelski", "email": "ppawelski3@reference.com", "gender": "Male", "ip_address": "112.108.13.162" },
+            { "id": 5, "first_name": "Balduin", "last_name": "Cranston", "email": "bcranston4@shop-pro.jp", "gender": "Male", "ip_address": "216.176.20.251" },
+            { "id": 6, "first_name": "Bertie", "last_name": "Denyukhin", "email": "bdenyukhin5@cnbc.com", "gender": "Female", "ip_address": "6.144.202.114" },
+            { "id": 7, "first_name": "Cristie", "last_name": "Rutherfoord", "email": "crutherfoord6@hhs.gov", "gender": "Female", "ip_address": "7.170.94.93" },
+            { "id": 8, "first_name": "Edan", "last_name": "Pawling", "email": "epawling7@cpanel.net", "gender": "Male", "ip_address": "200.153.169.167" },
+            { "id": 9, "first_name": "Edith", "last_name": "Verrick", "email": "everrick8@wsj.com", "gender": "Female", "ip_address": "77.67.246.35" },
+            { "id": 10, "first_name": "Laney", "last_name": "Filippov", "email": "lfilippov9@so-net.ne.jp", "gender": "Female", "ip_address": "152.90.110.194" }
+        ]
+    </script>
+</body>
+
+</html>

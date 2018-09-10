@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <tbody id="mytable1">
+                <th>fname</th>
+                <th>lname</th>
+                <th>tel</th>
+                <th>address</th>
+                <th>city</th>
+                <th>state</th>
+                <th>zip</th>
+        </tbody>
+
+
+    </table>
+
+
+
+    <script>
+        var persons = [
+            {
+                "fname": "Latonia",
+                "lname": "Fouts",
+                "tel": "(547)361-1089",
+                "address": "3929 Tortor St",
+                "city": "Midlothian",
+                "state": "TX",
+                "zip": 37994
+            },
+            {
+                "fname": "Mark",
+                "lname": "Harper",
+                "tel": "(356)880-8960",
+                "address": "8004 Ac Ln",
+                "city": "Eagle Pass",
+                "state": "WV",
+                "zip": 77098
+            }
+
+        ]
+
+        for(i=0;i<persons.length;i++){
+            var newPerson = persons[i];
+            var myTr= document.createElement("tr")
+            for(b in newPerson){
+                    var tabletd= document.createElement("td")
+                    tabletd.innerHTML= newPerson[b]
+                    myTr.appendChild(tabletd)
+
+                }
+            document.getElementById("mytable1").appendChild(myTr)
+            console.log(newPerson)
+        }
+    </script>
+</body>
+
+</html>

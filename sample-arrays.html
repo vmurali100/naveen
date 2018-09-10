@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var friends = [
+            "nav",
+            "ravi",
+            "sure",
+            "sach"
+
+        ]
+        friends.push("ram")//push adding end of the array
+        friends.unshift("soma")// push adding first of the array
+        friends.pop()// push remove last value of the array
+        friends.shift()// push remove first value of the array
+        friends.sort()// push ascending value of the array
+        friends.reverse()// push descending value of the array
+        friends.splice(2, 1)// delete 2nd value value of the array
+        friends.splice(2, 0, "murali")// adding value in the second place
+        friends.splice(2)
+        console.log(friends)
+        console.log(friends.length)
+
+        var schools = [
+            "dms",
+            "cms",
+            "ans",
+            "ret",
+            "sdf",
+            "fgh",
+            "hjk"
+        ]
+        
+
+        // schools.pop()
+        // schools.push("nav")
+        // schools.unshift("nmnm")
+        // schools.shift()
+        // schools.sort()
+        // schools.reverse()
+        // schools.splice(1,1)
+        // schools.splice(1,0,"ret")
+        // var deleted = schools.splice(0)
+        // schools.splice(0,0,deleted)
+        // console.log(deleted)
+
+        // schools.splice(1,1)
+        // schools.splice(1,1,"abcd")
+        // schools.splice(0)
+        var del = schools.splice(0)
+        schools.splice(0,0,del)
+        document.write(schools)
+
+
+    </script>
+</body>
+
+</html>

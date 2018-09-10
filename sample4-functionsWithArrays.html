@@ -13,6 +13,9 @@
         <option value="reverse">Reverse</option>
 
     </select>
+    <div id="results">
+
+    </div>
     <script>
     var friends=[
     {
@@ -47,14 +50,29 @@
     if(selectedValue=="pop"){
         friends.pop()
         console.log(friends)
+        display()
+       
     }else if( selectedValue == "shift"){
         deleted = friends.shift()
         console.log(friends)
+        display()
+
     }else if (selectedValue == "unshift"){
         friends.unshift(deleted)
         console.log(friends)
+        display()
     }
    
+
+    }
+
+    function display(){
+        var data = "" ;
+        for(i=0;i<friends.length;i++){
+            // document.write(friends[i].fname+"<br>")
+            data=data+friends[i].fname;
+        }
+        document.getElementById("results").innerHTML=data;
 
     }
     </script>

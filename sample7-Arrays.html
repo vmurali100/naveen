@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo1">
+
+    </div>
+    <script>
+        var friends = [{
+            "fname": "Regine",
+            "lname": "Maas",
+            "tel": "(126)280-5842",
+            "address": "9406 Ante Ct",
+            "city": "Loves Park",
+            "state": "NM",
+            "zip": 37038
+        },
+        {
+            "fname": "Lorenzo",
+            "lname": "Stair",
+            "tel": "(917)215-5098",
+            "address": "9585 Lectus Ave",
+            "city": "Riverview",
+            "state": "MS",
+            "zip": 54250
+        },
+        {
+            "fname": "Janette",
+            "lname": "Antunes",
+            "tel": "(634)755-7652",
+            "address": "3737 Magna St",
+            "city": "Olive Branch",
+            "state": "MD",
+            "zip": 45413
+        },
+        {
+            "fname": "LaJeania",
+            "lname": "Llewellyn",
+            "tel": "(761)232-6831",
+            "address": "1036 Sed Ln",
+            "city": "Los Angeles",
+            "state": "HI",
+            "zip": 32726
+        }]
+        var data = "";
+        for (
+            i=0;
+            i<friends.length;
+            i++
+        ) {
+            // console.log(friends[i].fname)
+            data=data+"Friend Name : "+friends[i].fname+
+            "<br>friend LastName : "+friends[i].lname+
+            "<br>Friend Tel : "+friends[i].tel+
+            "<br>Friend Address : "+friends[i].address+
+            "<br>friend State : " +friends[i].city+
+            "<br>friend Zip: "+friends[i].state+
+            
+            "<br><br>"
+
+            // +"<br>"+friends[i].tel+
+            // "<br>"+friends[i].address+
+            // "<br>"+friends[[i].city+
+            // "<br>"+friends[i].state+
+            // "<br>"+friends[i].zip
+        }
+    document.getElementById("demo1").innerHTML=data;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <table border="1">
+                <tbody id="mytable1">
+                        <th>fname</th>
+                        <th>lname</th>
+                        <th>tel</th>
+                        <th>address</th>
+                        <th>city</th>
+                        <th>state</th>
+                        <th>zip</th>
+                </tbody>
+            </table>
+    <script>
+    var mydetails=[
+    {
+        "fname": "Margaret",
+        "lname": "Whalley",
+        "tel": "(352)257-3792",
+        "address": "878 Non Rd",
+        "city": "Swansea",
+        "state": "MT",
+        "zip": 45806
+    },
+    {
+        "fname": "Rajae",
+        "lname": "Kubota",
+        "tel": "(226)492-4807",
+        "address": "831 Dolor Ct",
+        "city": "Lacey",
+        "state": "AK",
+        "zip": 49078
+    },
+    {
+        "fname": "Victor",
+        "lname": "Snyder",
+        "tel": "(669)029-9196",
+        "address": "4359 Tincidunt Ave",
+        "city": "Vero Beach",
+        "state": "GA",
+        "zip": 92676
+    }
+    ]
+
+    for(i=0;i<mydetails.length;i++){
+
+        var newperson=mydetails[i];
+        var mytr= document.createElement("tr");
+        for(b in newperson){
+            var tabletd= document.createElement("td");
+            tabletd.innerHTML=newperson[b]
+            mytr.appendChild(tabletd)
+
+        }
+        document.getElementById("mytable1").appendChild(mytr)
+
+    }
+    
+    </script>
+</body>
+</html>

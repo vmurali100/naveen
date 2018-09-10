@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="dropdown" class="" onchange="latest()">
+        <option value="push">Push</option>
+        <option value="pop">POP</option>
+        <option value="shift">Shift</option>
+        <option value="unshift">Unshift</option>
+        <option value="reverse">Reverse</option>
+    </select>
+
+    <script>
+
+        var team= [
+            {
+                "fname": "Preston",
+                "lname": "Erica"
+
+            },
+            {
+                "fname": "Marcus",
+                "lname": "Efird"
+            },
+            {
+                "fname": "Jireh",
+                "lname": "Krout"
+            },
+            {
+                "fname": "Angelique",
+                "lname": "Gipple"
+            }
+
+        ]
+        var deleted;
+        function latest(){
+            console.log(team)
+            // alert(team);
+            var select= document.getElementById("dropdown").value;
+            if(select == "pop"){
+                team.pop()
+                console.log(team);
+
+            }else if(select == "shift" ){
+                
+                deleted=team.shift()
+                console.log(team)
+
+            }else if(select=="unshift"){
+                team.unshift(deleted)
+                console.log(team)
+
+            }else if(select=="reverse"){
+                team.reverse()
+                console.log(team)
+            }
+
+            
+        }
+
+
+    </script>
+
+</body>
+
+</html>

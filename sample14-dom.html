@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<table border="1">
+<tbody  id="mytable1">
+        <th>fname</th>
+        <th>lname</th>
+        <th>tel</th>
+        <th>address</th>
+        <th>city</th>
+        <th>state</th>
+        <th>zip</th>
+</tbody>
+
+
+</table>
+
+
+
+    <script>
+    
+    var person1= {
+        "fname": "Pauline",
+        "lname": "Bunker",
+        "tel": "(825)111-7461",
+        "address": "9698 Massa Rd",
+        "city": "North Providence",
+        "state": "WI",
+        "zip": 12384
+    }
+    var mytr= document.createElement("tr");
+    for(b in person1){
+        var tabletd= document.createElement("td")
+        tabletd.innerHTML= person1[b]
+        mytr.appendChild(tabletd)
+
+    }
+    document.getElementById("mytable1").appendChild(mytr)
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="mydata" type="text">
+    <button onclick="showfriend()">showfriend</button>
+
+    <div id="detailsdata">
+
+    </div>
+    <script>
+        function showfriend(){
+        var data= document.getElementById("mydata").value;
+        // console.log(details)
+        for(
+            i=0;
+            i<details.length;
+            i++
+        ){
+            // console.log(details[i])
+            if(data== details[i].company){
+                console.log(details[i])
+
+                document.getElementById("detailsdata").innerHTML= "<br>ID ID: " + details[i]._id +
+                    "<br>ID INDEX : " + details[i].index +
+                    "<br>ID GUID : " + details[i].guid +
+                    "<br>ID ISACTIVE :" + details[i].isActive +
+                    "<br>ID BALANCE :" + details[i].balance +
+                    "<br>ID PICTURE :" + details[i].picture +
+                    "<br>ID AGE :" + details[i].age +
+                    "<br>ID EYECOLOR:" + details[i].eyeColor +
+                    "<br>ID Name:" + details[i].name +
+                    "<br>ID GENDER :" + details[i].gender +
+                    "<br>ID COMPANY :" + details[i].company +
+                    "<br>ID EMAIL:" + details[i].email +
+                    "<br>ID PHONE :" + details[i].phone 
+
+            }
+
+        }
+
+
+        }
+var details=[{
+            "_id": "5b9356d20a68c94c58d29b65",
+            "index": 0,
+            "guid": "31556030-8908-4ac2-b70f-cdd479b16015",
+            "isActive": false,
+            "balance": "$1,665.68",
+            "picture": "http://placehold.it/32x32",
+            "age": 38,
+            "eyeColor": "brown",
+            "name": "Melissa Noel",
+            "gender": "female",
+            "company": "PHOTOBIN",
+            "email": "melissanoel@photobin.com",
+            "phone": "+1 (876) 531-3530"
+        },
+        {
+            "_id": "5b9356d281fb0810845f93a4",
+            "index": 1,
+            "guid": "330f6139-6bb0-4515-9fc6-e2bec4b528a8",
+            "isActive": true,
+            "balance": "$3,928.06",
+            "picture": "http://placehold.it/32x32",
+            "age": 28,
+            "eyeColor": "green",
+            "name": "Martinez Davenport",
+            "gender": "male",
+            "company": "ANARCO",
+            "email": "martinezdavenport@anarco.com",
+            "phone": "+1 (837) 497-2670"
+        },
+        {
+            "_id": "5b9356d24047fb0855fd2215",
+            "index": 2,
+            "guid": "3e1132d9-f498-4e31-ac98-78bc8aa1c3d2",
+            "isActive": false,
+            "balance": "$3,621.58",
+            "picture": "http://placehold.it/32x32",
+            "age": 39,
+            "eyeColor": "green",
+            "name": "Morrow Bray",
+            "gender": "male",
+            "company": "XTH",
+            "email": "morrowbray@xth.com",
+            "phone": "+1 (984) 451-2751"
+        },
+        {
+            "_id": "5b9356d2cc4841222c7ed6c2",
+            "index": 3,
+            "guid": "4c0137c4-70f0-428e-b23c-d834a4957183",
+            "isActive": true,
+            "balance": "$2,144.78",
+            "picture": "http://placehold.it/32x32",
+            "age": 27,
+            "eyeColor": "brown",
+            "name": "Larson Lawrence",
+            "gender": "male",
+            "company": "IMAGINART",
+            "email": "larsonlawrence@imaginart.com",
+            "phone": "+1 (862) 491-2466"
+        },
+        {
+            "_id": "5b9356d26b6a3103b9e4d9db",
+            "index": 4,
+            "guid": "c7e5a0c2-439e-45ca-b47b-4144f4348498",
+            "isActive": true,
+            "balance": "$1,195.42",
+            "picture": "http://placehold.it/32x32",
+            "age": 39,
+            "eyeColor": "brown",
+            "name": "Beach Waller",
+            "gender": "male",
+            "company": "ACUSAGE",
+            "email": "beachwaller@acusage.com",
+            "phone": "+1 (973) 537-2197"
+        },
+        {
+            "_id": "5b9356d2ab1c4ca8e0fe2a92",
+            "index": 5,
+            "guid": "c490d3cc-22b7-4d21-8d98-cfc21de8339a",
+            "isActive": true,
+            "balance": "$2,253.66",
+            "picture": "http://placehold.it/32x32",
+            "age": 29,
+            "eyeColor": "blue",
+            "name": "Sherry Walters",
+            "gender": "female",
+            "company": "JUNIPOOR",
+            "email": "sherrywalters@junipoor.com",
+            "phone": "+1 (993) 414-3729"
+        },
+        {
+            "_id": "5b9356d235a4200fd569c9d4",
+            "index": 6,
+            "guid": "3a02734f-59bd-467a-992e-18483fcb3b2d",
+            "isActive": true,
+            "balance": "$2,039.16",
+            "picture": "http://placehold.it/32x32",
+            "age": 26,
+            "eyeColor": "green",
+            "name": "Allison Pacheco",
+            "gender": "female",
+            "company": "APPLICA",
+            "email": "allisonpacheco@applica.com",
+            "phone": "+1 (818) 433-3225"
+        }
+        ]
+
+
+
+
+    </script>
+</body>
+</html>
