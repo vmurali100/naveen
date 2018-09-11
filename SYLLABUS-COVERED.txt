@@ -18,5 +18,12 @@
     if 
     else if 
 8. DOM
-    document.getElementById()
-    document.createElement()    
+    document.getElementById();
+    document.createElement();
+9. CRUD App
+    How to Get the Data from Remote API Using Ajax.
+    How to Change Data from JSON to string and String to JSON.
+    How to Delete A row From a Table.
+    How to Edit A row from a table.
+    How to Update a row From A Table.
+    
