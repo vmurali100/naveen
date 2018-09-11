@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Document</title>
+     <style>
+     th {
+    text-transform: uppercase;
+}
+table {
+    float: left;
+    margin: 10px;
+}
+</style>
+
+</head>
+<body>
+        <table border="1">
+                <tr>
+                    <th>fname</th>
+                    <th>lname</th>
+                    <th>tel</th>
+                    <th>address</th>
+                    <th>city</th>
+                    <th>state</th>
+                    <th>zip</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="mytable1"></tbody>
+            </table>
+        <table border="1">
+            <tr>
+                <th>First Name</th><td><input type="text" id="fname"></td>
+            </tr>
+            <tr>
+                    <th>Last Name</th><td><input type="text" id="lname"></td>
+            </tr>
+            <tr>
+                    <th>Tel</th><td><input type="text" id="tel"></td>
+            </tr>
+            <tr>
+                    <th>Address</th><td><input type="text" id="address"></td>
+            </tr>
+            <tr>
+                    <th>City</th><td><input type="text" id="city"></td>
+            </tr>
+            <tr>
+                    <th>State</th><td><input type="text" id="state"></td>
+            </tr>
+            <tr>
+                    <th>Zip</th><td><input type="text" id="zip"></td>
+            </tr>
+            <tr>
+                <td></td><td><button onclick="updatePerson()">Update</button></td>
+            </tr>
+        </table>    
+    <script src="data.js"></script>
+    <script>
+   function display(data){
+       //data will be input. we will loop throug all the objects in An Array
+            document.getElementById("mytable1").innerHTML='';
+
+                for(i=0;i<data.length;i++){
+                    var newperson= data[i];
+                    var mytr= document.createElement("tr");
+                    for(a in newperson){
+                        var tabletd= document.createElement("td");
+                        tabletd.innerHTML= newperson[a]
+                        mytr.appendChild(tabletd)
+                    }
+
+                    var editTd=document.createElement("td");
+                    var deleteTd=document.createElement("td")
+                    mytr.appendChild(editTd)
+                    mytr.appendChild(deleteTd)
+
+                    var editBtn=document.createElement("button");
+                    editBtn.innerHTML="Edit";
+                    editBtn.setAttribute("onclick","editPerson("+i+")")
+                    var deleteBtn=document.createElement("button");
+                    deleteBtn.innerHTML="Delete";
+                    deleteBtn.setAttribute("onclick","deletePerson("+i+")")
+                    editTd.appendChild(editBtn);
+                    deleteTd.appendChild(deleteBtn);
+                    document.getElementById("mytable1").appendChild(mytr);
+                }
+        }
+        //Calling the Diplay Function with 10 Objects from Data.js
+        //Data is having 10 Objects 
+        display(data);
+        var rowIndex ;
+        function editPerson(i){
+            rowIndex=i;
+            var objectToUpdate = data[i];
+
+            for(a in objectToUpdate){
+                document.getElementById(a).value = objectToUpdate[a]
+            }
+        }
+        function deletePerson(i){
+            data.splice(i,1)// Splice Method will remove a value from An Array
+            display(data)// Calling diaplay method after removing an object . total no of objects will be displayed
+        
+        }
+        function updatePerson(){
+            var updatedObject={
+                    "fname": "",
+                    "lname": "",
+                    "tel": "",
+                    "address": "",
+                    "city": "",
+                    "state": "",
+                    "zip": null
+            }
+            for (a in updatedObject){
+                updatedObject[a] = document.getElementById(a).value
+            }
+            console.log(updatedObject)
+            data[rowIndex]= updatedObject;
+            clearForms()
+            display(data)
+        }
+        function clearForms(){
+            for (a in data[0]){
+               document.getElementById(a).value=""
+            }
+        }
+    </script>           
+</body>
+</html>
