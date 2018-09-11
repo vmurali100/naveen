@@ -1,0 +1,6 @@
+Step 1 : Creating A HTML Form and Static Table.
+Step 2 : Onclick of the Button , we have to fetch the information from the HTML Form .
+Step 3 : Create A GLobal Empty Array and Epty Object.
+Step 4 : Push the Object inside Array.
+Step 5 : Create a function to Display all the objects in Array
+Step 6 : Create A function to clear all the input fields

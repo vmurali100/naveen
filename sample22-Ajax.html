@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">Get Data</button>
+    <script>
+        function getData(){
+            var ajaxData =  new XMLHttpRequest;
+            ajaxData.onreadystatechange=function (){
+                if(ajaxData.readyState==4 && ajaxData.status==200){
+                    console.log(ajaxData.response)
+                }
+            }
+            ajaxData.open("GET","http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}&tel={phone|format}&address={streetAddress}&city={city}&state={usState|abbr}&zip={zip}&pretty=true");
+            ajaxData.send()
+        }
+    </script>
+</body>
+</html>

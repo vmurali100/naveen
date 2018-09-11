@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        th {
+       text-transform: uppercase;
+   }
+   table {
+       float: left;
+       margin: 10px;
+   }
+   </style>
+   
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>fname</th>
+            <th>lname</th>
+            <th>tel</th>
+            <th>address</th>
+            <th>city</th>
+            <th>state</th>
+            <th>zip</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tbody id="mytable1"></tbody>
+    </table>
+    <table border="1">
+        <tr>
+            <th>First Name</th><td><input type="text" id="fname"></td>
+        </tr>
+        <tr>
+            <th>Last Name</th><td><input type="text" id="lname"></td>
+        </tr>
+        <tr>
+            <th>Tel</th><td><input type="text" id="tel"></td>
+        </tr>
+        <tr>
+            <th>Address</th><td><input type="text" id="address"></td>
+        </tr>
+        <tr>
+            <th>City</th><td><input type="text" id="city"></td>
+        </tr>
+        <tr>
+            <th>State</th><td><input type="text" id="state"></td>
+        </tr>
+        <tr>
+            <th>Zip</th><td><input type="text" id="zip"></td>
+        </tr>
+        <tr>
+            <td></td><td><button onclick="updatePerson()">Update</button></td>
+        </tr>
+    </table> 
+    <!-- <script src="data.js"></script>    -->
+<script>
+var data ;
+function getData(){
+            var ajaxData =  new XMLHttpRequest;
+            ajaxData.onreadystatechange=function (){
+                if(ajaxData.readyState==4 && ajaxData.status==200){
+                    data = JSON.parse(ajaxData.response);
+                    console.log(data.length);
+                    display(data)
+                }
+            }
+            ajaxData.open("GET","http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}&tel={phone|format}&address={streetAddress}&city={city}&state={usState|abbr}&zip={zip}&pretty=true");
+            ajaxData.send()
+        }
+getData()
+ function display(data){
+     document.getElementById("mytable1").innerHTML='';
+
+    for(i=0;i<data.length;i++){
+        var newperson= data[i];
+        var mytr= document.createElement("tr");
+        for(a in newperson){
+            var tabletd= document.createElement("td");
+            tabletd.innerHTML= newperson[a]
+            mytr.appendChild(tabletd)
+        }
+
+        var editTd=document.createElement("td");
+        mytr.appendChild(editTd)
+        var deleteTd=document.createElement("td");
+        mytr.appendChild(deleteTd)
+
+        var editBtn=document.createElement("button");
+        editBtn.innerHTML="Edit";
+        editBtn.setAttribute("onclick", "editPerson("+i+")")
+
+        var deleteBtn=document.createElement("button");
+        deleteBtn.innerHTML="Delete";
+        deleteBtn.setAttribute("onclick", "deletePerson("+i+")")
+
+        editTd.appendChild(editBtn);
+        deleteTd.appendChild(deleteBtn);
+
+          document.getElementById("mytable1").appendChild(mytr);//fetch data from data.js(pass values to tbody of table )
+    }
+ }
+
+    // display(data);
+var rowIndex;
+    function editPerson(){
+        rowIndex=i;
+        var objectToUpdate = data[i];
+        for(a in objectToUpdate){
+            document.getElementById(a).value = objectToUpdate[a]
+        }
+    }
+    function deletePerson(i){
+      data.splice(i,1)
+      display(data)
+    }
+
+
+function updatePerson(){
+            var updatedObject={
+                    "fname": "",
+                    "lname": "",
+                    "tel": "",
+                    "address": "",
+                    "city": "",
+                    "state": "",
+                    "zip": null
+            }
+            for (a in updatedObject){
+                updatedObject[a] = document.getElementById(a).value
+            }
+            console.log(updatedObject)
+            data[rowIndex]= updatedObject;
+            clearForms()
+            display(data)
+        }
+        function clearForms(){
+            for (a in data[0]){
+               document.getElementById(a).value=""
+            }
+        }
+</script>
+
+
+
+</body>
+</html>

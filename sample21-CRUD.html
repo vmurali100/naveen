@@ -54,8 +54,22 @@ table {
                 <td></td><td><button onclick="updatePerson()">Update</button></td>
             </tr>
         </table>    
-    <script src="data.js"></script>
+    <!-- <script src="data.js"></script> -->
     <script>
+        var data ;
+function getData(){
+            var ajaxData =  new XMLHttpRequest;
+            ajaxData.onreadystatechange=function (){
+                if(ajaxData.readyState==4 && ajaxData.status==200){
+                    data = JSON.parse(ajaxData.response);
+                    console.log(data.length);
+                    display(data)
+                }
+            }
+            ajaxData.open("GET","http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}&tel={phone|format}&address={streetAddress}&city={city}&state={usState|abbr}&zip={zip}&pretty=true");
+            ajaxData.send()
+        }
+getData()
    function display(data){
        //data will be input. we will loop throug all the objects in An Array
             document.getElementById("mytable1").innerHTML='';
@@ -87,7 +101,7 @@ table {
         }
         //Calling the Diplay Function with 10 Objects from Data.js
         //Data is having 10 Objects 
-        display(data);
+        // display(data);
         var rowIndex ;
         function editPerson(i){
             rowIndex=i;
