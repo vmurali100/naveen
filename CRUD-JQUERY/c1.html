@@ -15,8 +15,14 @@
             float: left;
             margin: 10px;
         }
+        .create button{
+            margin: 13px 0px 4px 13px;
+        }
+        #create{
+            position: absolute;
+            right: 1%;
+        }
     </style>
-
 </head>
 
 <body>
@@ -29,12 +35,18 @@
             <th>city</th>
             <th>state</th>
             <th>zip</th>
+            <th>Age</th>
             <th>Edit</th>
             <th>Delete</th>
+
         </tr>
+
         <tbody id="mytable1"></tbody>
+        <button id="create" onclick="createPerson()">Create</button>
     </table>
-    <table border="1">
+
+    <!-- secondtable -->
+    <table id="edit-table" border="1" style="display:none;">
         <tr>
             <th>First Name</th>
             <td><input type="text" id="fname"></td>
@@ -64,35 +76,47 @@
             <td><input type="text" id="zip"></td>
         </tr>
         <tr>
+            <th>Age</th>
+            <td><input type="text" id="age"></td>
+        </tr>
+        <tr id="updatePerson">
             <td></td>
             <td><button onclick="updatePerson()">Update</button></td>
         </tr>
-        <tr>
-                <td></td>
-                <td><button onclick="createPerson()">Create</button></td>
-                
-            </tr>
+        <tr style="display:none" id="createPerson">
+            <td></td>
+            <td><button onclick="createPerson()">Create</button></td>
+
+        </tr>
     </table>
-    <!-- <script src="data.js"></script>    -->
+
+
+    <!-- secondtable-ends -->
+
+
+    <!-- <script src="../data.js"></script> -->
     <script>
         var data;
-        function getData() {
-            var ajaxData = new XMLHttpRequest;
-            ajaxData.onreadystatechange = function () {
-                if (ajaxData.readyState == 4 && ajaxData.status == 200) {
-                    data = JSON.parse(ajaxData.response);
-                    
-                    console.log(data);
+        // getdata()
+        function getdata() {
+            // alert("ajax")
+            var ajaxdata = new XMLHttpRequest;
+            ajaxdata.onreadystatechange = function () {
+                if (ajaxdata.readyState == 4 && ajaxdata.status == 200) {
+                    data = JSON.parse(ajaxdata.response);
+                    console.log(data)
                     display(data)
                 }
             }
-            ajaxData.open("GET", "http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}&tel={phone|format}&address={streetAddress}&city={city}&state={usState|abbr}&zip={zip}&pretty=true");
-            ajaxData.send()
+            ajaxdata.open("GET", "../data.js");
+            ajaxdata.send()
         }
-        getData()
+
+
+
+        // display(data)
         function display(data) {
             document.getElementById("mytable1").innerHTML = '';
-
             for (i = 0; i < data.length; i++) {
                 var newperson = data[i];
                 var mytr = document.createElement("tr");
@@ -101,42 +125,43 @@
                     tabletd.innerHTML = newperson[a]
                     mytr.appendChild(tabletd)
                 }
-
                 var editTd = document.createElement("td");
                 mytr.appendChild(editTd)
                 var deleteTd = document.createElement("td");
                 mytr.appendChild(deleteTd)
 
                 var editBtn = document.createElement("button");
-                editBtn.innerHTML = "Edit";
-                // editBtn.setAttribute("onclick", "editPerson(" + i + ")")
+                editBtn.innerHTML = "Edit"
+                editBtn.setAttribute("onclick", "editperson(" + i + ")")
 
-                var deleteBtn = document.createElement("button");
-                deleteBtn.innerHTML = "Delete";
-                // deleteBtn.setAttribute("onclick", "deletePerson(" + i + ")")
+                var deleteBtn = document.createElement("Button");
+                deleteBtn.innerHTML = "Delete"
+                deleteBtn.setAttribute("onclick", "deleteperson(" + i + ")")
 
-                editTd.appendChild(editBtn);
-                deleteTd.appendChild(deleteBtn);
+                editTd.appendChild(editBtn)
+                deleteTd.appendChild(deleteBtn)
 
-                document.getElementById("mytable1").appendChild(mytr);//fetch data from data.js(pass values to tbody of table )
+                document.getElementById("mytable1").appendChild(mytr);
+                // deleteperson()
             }
-        }
 
-        // display(data);
+        }
         var rowIndex;
-        function editPerson(i) {
+        function editperson(i) {
+            document.getElementById("edit-table").style.display = "block";
+
             rowIndex = i;
             var objectToUpdate = data[i];
-            for (a in objectToUpdate) {
-                document.getElementById(a).value = objectToUpdate[a]
+            for (b in objectToUpdate) {
+                document.getElementById(b).value = objectToUpdate[b]
             }
         }
-        function deletePerson(i) {
+
+        function deleteperson(i) {
+            // alert("delete", i)
             data.splice(i, 1)
             display(data)
         }
-
-
         function updatePerson() {
             var updatedObject = {
                 "fname": "",
@@ -145,46 +170,51 @@
                 "address": "",
                 "city": "",
                 "state": "",
-                "zip": null
+                "zip": null,
+                "age": ""
             }
             for (a in updatedObject) {
                 updatedObject[a] = document.getElementById(a).value
             }
             console.log(updatedObject)
             data[rowIndex] = updatedObject;
-            clearForms()
+            clearform()
             display(data)
-        }
+            document.getElementById("edit-table").style.display = "none";
 
- function createPerson(){
-     var newperson = {
+        }
+        function clearform() {
+            for (a in data[0]) {
+                document.getElementById(a).value = "";
+            }
+        }
+        function createPerson() {
+            alert("createhi");
+            document.getElementById("edit-table").style.display = "block";
+            document.getElementById("createPerson").style.display = "block";
+            document.getElementById("updatePerson").style.display = "none";
+            var createobject = {
                 "fname": "",
                 "lname": "",
                 "tel": "",
                 "address": "",
                 "city": "",
                 "state": "",
-                "zip": null
+                "zip": null,
+                "age": ""
             }
-            for(b in newperson){
-                newperson[b]=document.getElementById(b).value
+            for (b in createobject) {
+                createobject[b] = document.getElementById(b).value
             }
-            data.push(newperson)
-            display(data);
-            clearForms()
 
- }
+            document.getElementById("mytable1").innerHTML = '';
+            display(data)
+            data.push(createobject)
 
-
-        function clearForms() {
-            for (a in data[0]) {
-                document.getElementById(a).value = ""
-            }
         }
+
+
     </script>
-
-
-
 </body>
 
 </html>

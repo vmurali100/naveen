@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>First Name</th>
+            <td><input type="text" id="fname"></td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td><input type="text" id="lname"></td>
+        </tr>
+        <tr>
+            <th>Tel</th>
+            <td><input type="text" id="tel"></td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td><input type="text" id="address"></td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td><input type="text" id="city"></td>
+        </tr>
+        <tr>
+            <th>State</th>
+            <td><input type="text" id="state"></td>
+        </tr>
+        <tr>
+            <th>Zip</th>
+            <td><input type="text" id="zip"></td>
+        </tr>
+        <tr style="display:none" id="updatePerson">
+            <td></td>
+            <td><button onclick="updatePerson()">Update</button></td>
+        </tr>
+        <tr  id="createPerson">
+            <td></td>
+            <td><button onclick="createPerson()">Create</button></td>
+
+        </tr>
+    </table>
+    <script>
+    function createPerson() {
+        // alert("createtocrud")
+           var data= JSON.parse(localStorage.getItem('data')) 
+           
+
+            var newperson = {
+            "fname": "",
+            "lname": "",
+            "tel": "",
+            "address": "",
+            "city": "",
+            "state": "",
+            "zip": null
+        }
+           
+            for (b in newperson) {
+                newperson[b] = document.getElementById(b).value
+            }
+            data.push (newperson);
+           localStorage.setItem('data',JSON.stringify(data))
+            // data.push(newperson)
+            // display(data);
+            // clearForms()
+            location.href = "crud.html";
+
+        }
+
+    
+    </script>
+</body>
+</html>

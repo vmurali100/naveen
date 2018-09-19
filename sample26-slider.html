@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    img#mySlider {
+    width: 500px;
+    height: 400px;
+}
+    </style>
+</head>
+<body>
+    <img src="1.jpg" alt="" id="mySlider">
+    <script>
+        function changeImage(){
+            var imgAddress = document.getElementById("mySlider").src;
+            console.log(imgAddress)
+            var backSlashIndex = imgAddress.lastIndexOf("/");
+            var imgNo = imgAddress.substring(backSlashIndex+1,backSlashIndex+2);
+            imgNo++;
+            if(imgNo==5){
+                imgNo=1;
+            }
+            document.getElementById("mySlider").src = imgNo+".jpg"
+        }
+        startSlide()
+        var slider
+       function startSlide(){
+        slider = setInterval(function (){
+            changeImage()
+        },1000)
+       }
+        document.getElementById("mySlider").onmouseover = function (){
+            clearInterval(slider)
+        }
+        document.getElementById("mySlider").onmouseout = function (){
+            startSlide()
+        }
+    </script>
+</body>
+</html>

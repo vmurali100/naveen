@@ -30,13 +30,24 @@
         function getFriendfullDetails(fname){
             console.log(fname)
             for (i=0;i<data.length;i++){
+                
                 for (a in data[i]){
+                    delete data[i]['address']
+                    delete data[i]['city']
+                    // colleges["district"]= 23
+                    data[i].create = "adding";
+
                     if(fname==data[i][a]){
                         console.log(data[i])
+                        
                         var results="";
+                        
                         for (b in data[i]){
+                            
                             results=results+b+" : "+data[i][b]+"<br>"
+                            
                         }
+                        
                         document.getElementById("demo").innerHTML= results;
                     }
                 }

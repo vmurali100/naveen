@@ -6,7 +6,8 @@ var data = [
         "address": "3186 Tellus St",
         "city": "Conover",
         "state": "SC",
-        "zip": 11015
+        "zip": 11015,
+        "age":23
     },
     {
         "fname": "Bingmei",
@@ -15,7 +16,9 @@ var data = [
         "address": "2367 Tellus St",
         "city": "Rancho Cordova",
         "state": "LA",
-        "zip": 92545
+        "zip": 92545,
+        "age":13
+
     },
     {
         "fname": "Eden",
@@ -24,7 +27,9 @@ var data = [
         "address": "4152 Ante Ave",
         "city": "Stony Point",
         "state": "OR",
-        "zip": 80600
+        "zip": 80600,
+        "age":80
+
     },
     {
         "fname": "Earnestine",
@@ -33,7 +38,9 @@ var data = [
         "address": "7064 At Rd",
         "city": "Minneola",
         "state": "NE",
-        "zip": 68775
+        "zip": 68775,
+        "age":45
+
     },
     {
         "fname": "Shelley",
@@ -42,7 +49,9 @@ var data = [
         "address": "4703 Facilisis St",
         "city": "Hampton Roads",
         "state": "MD",
-        "zip": 82042
+        "zip": 82042,
+        "age":18
+
     },
     {
         "fname": "Asif",
@@ -51,7 +60,9 @@ var data = [
         "address": "9957 Et Rd",
         "city": "Indy",
         "state": "DC",
-        "zip": 48443
+        "zip": 48443,
+        "age":12
+
     },
     {
         "fname": "Anuj",
@@ -60,7 +71,9 @@ var data = [
         "address": "2722 Sit Ln",
         "city": "Concord",
         "state": "TX",
-        "zip": 45069
+        "zip": 45069,
+        "age":72
+
     },
     {
         "fname": "Wayne",
@@ -69,7 +82,9 @@ var data = [
         "address": "2273 Orci Ct",
         "city": "Arlington",
         "state": "ND",
-        "zip": 76826
+        "zip": 76826,
+        "age":65
+
     },
     {
         "fname": "Dolores",
@@ -78,7 +93,9 @@ var data = [
         "address": "2457 Sit Ave",
         "city": "Catlettsburg",
         "state": "CO",
-        "zip": 93171
+        "zip": 93171,
+        "age":35
+
     },
     {
         "fname": "Marisela",
@@ -87,6 +104,8 @@ var data = [
         "address": "3251 Tortor Rd",
         "city": "Texas City",
         "state": "IN",
-        "zip": 25557
+        "zip": 25557,
+        "age":15
+
     }
 ]
