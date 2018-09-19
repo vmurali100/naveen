@@ -4,24 +4,30 @@
      <title>Document</title>
 </head>
 <body>
-    <ul id="myStudents">
+    <!-- <ul id="myStudents">
 
-    </ul>
+    </ul> -->
+    <select id="myStudents">
+        <option value="Select Some Value" disabled>Select Some Value</option>
+    </select>
     <div id="demo"></div>
     <script src="data.js"></script>
     <script>
         function display(){
             for (i=0;i<data.length;i++){
-                var myLi = document.createElement("li");
-                myLi.innerHTML=data[i].fname
-                document.getElementById("myStudents").appendChild(myLi)   
+                // var myLi = document.createElement("li");
+                var myOpt = document.createElement("option")
+                myOpt.innerHTML=data[i].fname
+                document.getElementById("myStudents").appendChild(myOpt)   
             }
         }
 
         display()
 
-        document.getElementById("myStudents").onclick = function (event){
-            getFriendfullDetails(event.target.innerHTML)
+        document.getElementById("myStudents").onchange = function (event){
+            var selectedValue = document.getElementById("myStudents").value;
+            console.log(selectedValue)
+            getFriendfullDetails(selectedValue)
         }
 
         // document.getElementById("myStudents").addEventListener('click',function (event){

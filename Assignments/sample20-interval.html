@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="clearInt()">Clear</button>
+    <h2 id="date"></h2>
+    <script>
+        // setTimeout(function(){
+        //     alert("Welcome to Javascript")
+        // },2000)
+
+    //    var intr =  setInterval(function (){
+    //         alert("Helo I am going repeat")
+    //     },4000)
+    //     function clearInt(){
+    //         clearInterval(intr)
+    //     }
+
+    //     setTimeout(function (){
+    //         clearInterval(intr)
+    //     },10000)
+
+    function showTime(){
+        var todaysTime = new Date()
+        document.getElementById("date").innerHTML = todaysTime.toLocaleTimeString();
+    }
+    showTime();
+    setInterval(function (){
+        showTime();
+    },1000)
+    </script>
+</body>
+</html>
