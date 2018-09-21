@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myNos= [10,3,5,8,0,20,50]
+        myNos.sort()
+        // console.log(myNos.sort((a, b) => a - b))
+        console.log(myNos.sort(function (a,b){
+            return b-a;
+        }))
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var statement = "I am murali . My age is 39 . my Contact no is 9663856625. my House no is 20"
+    var nos = statement.match(/\d+/g);
+    for (i=0;i<nos.length;i++){
+        if(nos[i].length==10){
+                var lasTdigits = nos[i].substring(6)
+            document.write("XXXXXX"+lasTdigits+"<br>")
+        }else{
+            document.write(nos[i]+"<br>");
+        }
+       
+
+    }
+    console.log(nos)
+    </script>
+</body>
+</html>

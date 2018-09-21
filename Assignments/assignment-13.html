@@ -41,11 +41,24 @@ img#mainImage {
             <img src="images/4.jpg" alt="" class="simages">
 
         </div>
+        <div id="del">
+            <input type="text" id="txtIndex">
+            <br>
+            <button id="delBtn">Delete</button>
+        </div>
     </div>
     <script>    
         document.getElementById("smallImages").onclick=function (event){
             console.log(event.target.src)
             document.getElementById("mainImage").src=event.target.src
+        }
+
+        document.getElementById("delBtn").onclick=function (){
+            var imgNo=document.getElementById("txtIndex").value;
+            var allImages = document.getElementsByClassName("simages")
+            var parentElemet=document.getElementById("smallImages")
+            parentElemet.removeChild(allImages[imgNo])
+            document.getElementById("txtIndex").value="";
         }
     </script>
 </body>

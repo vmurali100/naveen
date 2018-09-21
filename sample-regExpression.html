@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Document</title>
+</head>
+<body>
+    
+        <input type="text" id="emailValue"><br>
+        <button onclick="validateEmail()">Check Mail</button>
+   
+    <script>
+
+        function validateEmail(){
+            var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+            if(emailPattern.test(document.getElementById("emailValue").value)){
+                alert("Email Address is Valid")
+            }else{
+                alert("Email Address is inValid")
+
+            }
+        }
+      var statement ="Welcome to Javascript and Angular"  ;
+      var results = statement.replace(/\bAngular\b/, "Angular 5");
+      console.log(results)
+    </script>
+</body>
+</html>
