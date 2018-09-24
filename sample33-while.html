@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        
+        var i=0;
+        var students=[{fname:"Murali"},{fname:"Krishna"},{fname:"Venkat"}]
+        var text =""
+        while (i < students.length) {
+            text += "<br>The Student Name is " + students[i].fname;
+            i++;
+        }
+        document.getElementById("demo").innerHTML=text
+    </script>
+
+</body>
+</html>
