@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Constructor Function or Class 
+        //Function is acting as a Class
+        function Person (fname,lname){
+            this.firstName=fname;
+            this.lastName=lname
+        }
+
+        //Instances of a Classes or Creating An Obejcts with Classes
+        var person1 = new Person("Murali","Krisna");
+        var person2 = new Person("Vekat","Reddy");
+        var person3 = new Person("Vijay","E");
+        var person4 = new Person("Naveen","Kumar");
+        var person5 = new Person("Ram","Raj")
+// var person5 ={
+//     firstName:"ram",
+//     lastName:"Ravi"
+// }
+        var fullName ="Murali"
+        console.log(person1)
+        console.log(person2)
+        console.log(person3)
+        console.log(person4)
+        
+        //Adding a Property throught Prototype 
+        Person.prototype.fullName=function (){
+            return this.firstName+" "+this.lastName
+        }
+       
+    console.log(fullName);
+        
+    </script>
+</body>
+</html>
