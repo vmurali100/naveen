@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Tel</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let person of data">
+        <td>{{person.fname}}</td>
+        <td>{{person.lname}}</td>
+        <td>{{person.tel}}</td>
+        <td><button class="btn btn-info" (click)="editPerson(person)">Edit</button></td>
+      </tr>
+  </tbody>
+</table>
