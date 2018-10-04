@@ -11,6 +11,7 @@ export class PersonsComponent implements OnInit {
   constructor(private ps:PersonService) { }
 
   ngOnInit() {
+    // this.ps.getPersons()
     this.ps.getPersons().subscribe(response=>{
       console.log(response)
     })
