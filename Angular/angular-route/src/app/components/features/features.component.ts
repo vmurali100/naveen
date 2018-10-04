@@ -11,5 +11,7 @@ export class FeaturesComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  userRegister(data){
+    console.log(data)
+  }
 }

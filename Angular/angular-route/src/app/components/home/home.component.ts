@@ -9,9 +9,14 @@ import { PersonService } from '../../person.service';
 })
 export class HomeComponent implements OnInit {
   data = info;
+  myElement:HTMLElement;
   constructor(private router:Router,private ps : PersonService) { }
 
   ngOnInit() {
+      this.myElement = document.getElementById('myDiv')
+      this.myElement.addEventListener('mousemove',(event)=>{
+        console.log(event)
+      })
   }
   editPerson(person){
     console.log(person)

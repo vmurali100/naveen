@@ -8,9 +8,9 @@ import { PricingComponent } from './components/pricing/pricing.component';
 
 const routes:Routes = [
     {path:'',component:HomeComponent},
-    {path:'features',component:FeaturesComponent}
-    {path:'enterprises',component:EnterprisesComponent}
-    {path:'support',component:SupportComponent}
+    {path:'features',component:FeaturesComponent},
+    {path:'enterprises',component:EnterprisesComponent},
+    {path:'support',component:SupportComponent},
     {path:'pricing',component:PricingComponent}
 ]
 

@@ -10,6 +10,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { EnterprisesComponent } from './components/enterprises/enterprises.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { SupportComponent } from './components/support/support.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { SupportComponent } from './components/support/support.component';
   ],
   imports: [
     BrowserModule,
-    MyRoutingModule
+    MyRoutingModule,
+    FormsModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
